@@ -41,7 +41,7 @@ const App = () => {
                 <ContactForm propsSubmitHandler={formSubmitHandler} />
               </td>
               <td style={{width:'50%'}}>
-                <Contact propsContacts={contacts} />
+                <Contact data={contacts} />
               </td>
             </tr>
           </tbody>
