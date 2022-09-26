@@ -13,7 +13,7 @@ const Header = () => {
       <Typography variant='h3'>Call a Friend</Typography>
       <br/>
       <Divider component="div" role="presentation">
-        <Typography variant='subtitle2' gutterBottom={true}>Your friendly contact app</Typography>
+        <Typography variant='subtitle'>Your friendly contact app</Typography>
       </Divider>
     </>
   );

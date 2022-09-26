@@ -7,7 +7,8 @@ import {
     ListItem,
     ListItemText,
     ListItemAvatar,
-    Avatar
+    Avatar,
+    Divider
 } from '@mui/material';
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
@@ -16,18 +17,13 @@ const Contact = ({data}) => {
     // Contact berisi foto, nama, telepon, dan email
     return (
         <List sx={{ width: '100%', maxWidth: 400, backgroundColor:"palegreen" }}>
-            {
-                data.map((contact) => {
-                    return (
-                        <ListItem divider key={contact.phone}>
-                            <ListItemAvatar>
-                                <Avatar alt={contact.name} src={contact.photo} />
-                            </ListItemAvatar>
-                            <ListItemText primary={contact.name} secondary={<>{contact.phone}<br/>{contact.email}</>} />
-                        </ListItem>
-                    )
-                })
-            }
+            <ListItem>
+                <ListItemAvatar>
+                    <Avatar alt={data.name} src={data.photo} />
+                </ListItemAvatar>
+                <ListItemText primary={data.name} secondary={<>{data.phone}<br/>{data.email}</>} />
+            </ListItem>
+            <Divider />
         </List>
     );
 };

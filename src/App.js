@@ -21,7 +21,7 @@ const App = () => {
       email: contact.email,
       photo: contact.photo
     }
-    console.log("contact baru dari parent " + objContact);
+    console.log("contact baru dari child component " + objContact.name);
 
     const newContact = [...contacts, objContact];
 
@@ -40,8 +40,14 @@ const App = () => {
               <td style={{width:'50%', verticalAlign:'top'}}>
                 <ContactForm propsSubmitHandler={formSubmitHandler} />
               </td>
-              <td style={{width:'50%'}}>
-                <Contact data={contacts} />
+              <td style={{width:'50%', verticalAlign:'top'}}>
+                {
+                  contacts.map((single_data) => {
+                    return (
+                      <Contact data={single_data} key={single_data.phone} />
+                    )
+                  })
+                }
               </td>
             </tr>
           </tbody>
