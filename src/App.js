@@ -42,11 +42,9 @@ const App = () => {
               </td>
               <td style={{width:'50%', verticalAlign:'top'}}>
                 {
-                  contacts.map((single_data) => {
-                    return (
+                  contacts.map(single_data => (
                       <Contact data={single_data} key={single_data.phone} />
-                    )
-                  })
+                  ))
                 }
               </td>
             </tr>
