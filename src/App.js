@@ -3,6 +3,7 @@ import Header from './components/Header';
 import React, {useState} from 'react';
 import Contact from './components/Contact';
 import ContactForm from './components/ContactForm';
+import { List } from '@mui/material';
 
 // Uncomment untuk memuat daftar kontak
 import contactsJSON from './data/contacts.json';
@@ -41,11 +42,13 @@ const App = () => {
                 <ContactForm propsSubmitHandler={formSubmitHandler} />
               </td>
               <td style={{width:'50%', verticalAlign:'top'}}>
-                {
-                  contacts.map(single_data => (
-                      <Contact data={single_data} key={single_data.phone} />
-                  ))
-                }
+                <List sx={{ width: '100%', maxWidth: 400, backgroundColor:"palegreen" }}>
+                  {
+                    contacts.map(single_data => (
+                        <Contact data={single_data} key={single_data.phone} />
+                    ))
+                  }
+                </List>
               </td>
             </tr>
           </tbody>

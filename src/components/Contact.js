@@ -3,12 +3,10 @@
 // https://mui.com/material-ui/react-list/#folder-list
 import React from 'react';
 import {
-    List,
     ListItem,
     ListItemText,
     ListItemAvatar,
-    Avatar,
-    Divider
+    Avatar
 } from '@mui/material';
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
@@ -16,15 +14,12 @@ import {
 const Contact = ({data}) => {
     // Contact berisi foto, nama, telepon, dan email
     return (
-        <List sx={{ width: '100%', maxWidth: 400, backgroundColor:"palegreen" }}>
-            <ListItem>
-                <ListItemAvatar>
-                    <Avatar alt={data.name} src={data.photo} />
-                </ListItemAvatar>
-                <ListItemText primary={data.name} secondary={<>{data.phone}<br/>{data.email}</>} />
-            </ListItem>
-            <Divider />
-        </List>
+        <ListItem alignItems='flex-start' divider={true}>
+            <ListItemAvatar>
+                <Avatar alt={data.name} src={data.photo} />
+            </ListItemAvatar>
+            <ListItemText primary={data.name} secondary={<>{data.phone}<br/>{data.email}</>} />
+        </ListItem>
     );
 };
 
